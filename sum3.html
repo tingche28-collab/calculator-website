@@ -1,0 +1,359 @@
+
+<HTML>
+<HEAD>
+<TITLE>MY CALCULATOR</TITLE>
+<link rel="stylesheet" href="sum3.css">
+</HEAD>
+
+<BODY>
+
+<DIV id="title">Digital </DIV>
+<DIV id="title2">Calculator</DIV>
+
+<script>
+
+var total=0;
+var operator='';
+var storednumber=0;
+
+function handleOperatorPlus(){
+
+    if(operator==''){
+        storednumber=total;
+        total=0;
+    }
+    else if(operator=='+'){
+        storednumber+=total;
+        total=0;
+    }
+    else if(operator=='-'){
+        storednumber-=total;
+        total=0;
+    }
+    else if(operator=='*'){
+        storednumber*=total;
+        total=0;
+    }
+    else if(operator=='/'){
+        storednumber/=total;
+        total=0;
+    }
+    else if(operator=='%'){
+        storednumber%=total;
+        total=0;
+    }
+
+    document.getElementById('nftext').innerHTML=storednumber;
+    operator='+';
+}
+
+
+function handleOperatorMinus(){
+
+    if(operator==''){
+        storednumber=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='+'){
+        storednumber+=total;
+         document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='-'){
+        storednumber-=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='*'){
+        storednumber*=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='/'){
+        storednumber/=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='%'){
+        storednumber%=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+
+    document.getElementById('nftext').innerHTML=storednumber;
+    operator='-';
+}
+
+
+function handleOperatorMultiply(){
+
+    if(operator==''){
+        storednumber=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='+'){
+        storednumber+=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='-'){
+        storednumber-=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='*'){
+        storednumber*=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='/'){
+        storednumber/=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='%'){
+        storednumber%=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+
+    document.getElementById('nftext').innerHTML=storednumber;
+    operator='*';
+}
+
+
+function handleOperatorDivide(){
+
+    if(operator==''){
+        storednumber=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='+'){
+        storednumber+=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='-'){
+        storednumber-=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='*'){
+        storednumber*=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='/'){
+        storednumber/=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+    else if(operator=='%'){
+        storednumber%=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+        total=0;
+    }
+
+    document.getElementById('nftext').innerHTML=storednumber;
+    operator='/';
+}
+
+function handleOperatorsqrt(){
+
+    total=Math.sqrt(total);
+    document.getElementById('nftext').innerHTML=total;
+    storednumber=0;
+    operator='';
+}
+
+
+
+function handleOperatorpercentage(){
+    total=total/100;
+    document.getElementById('nftext').innerHTML=total;
+}
+
+function handleOperatorAC(){
+    total=0;
+    storednumber=0;
+    operator='';
+    document.getElementById('nftext').innerHTML=0;
+
+}
+
+function handleOperatorEqual(){
+    if(operator=='+'){
+        storednumber+=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+    }
+    else if(operator=='-'){
+        storednumber-=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+    }
+    else if(operator=='*'){
+        storednumber*=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+    }
+    else if(operator=='/'){
+        storednumber/=total;
+        document.getElementById('nftext').innerHTML=storednumber;
+    }
+
+    else if(operator=='%'){
+    storednumber%=total;
+    document.getElementById('nftext').innerHTML=storednumber;
+}
+
+    total=0;
+    operator='';
+}
+
+</script>
+<DIV id="bwhitebox"></DIV>
+<IMG src="image/cal1.png" id="background">
+<IMG src="image/cal1ac.png" id="ac" onclick="handleOperatorAC();">
+<IMG src="image/cal1mi.png" id="mi"onclick="total=Math.floor(total/10);document.getElementById('nftext').innerHTML=total">
+<IMG src="image/cal1per.png" id="per" onclick="handleOperatorpercentage();">
+<IMG src="image/cal1di.png" id="di" onclick="handleOperatorDivide();">
+<IMG src="image/cal1min.png" id="min" onclick="handleOperatorMinus();">
+<IMG src="image/cal1mul.png" id="mul" onclick="handleOperatorMultiply();">
+<IMG src="image/cal1pl.png" id="pl" onclick="handleOperatorPlus();">
+<IMG src="image/cal1sqrt.png" id="sqrt" onclick="handleOperatorsqrt();">
+<IMG src="image/cal1eq.png" id="eq" onclick="handleOperatorEqual();">
+<IMG src="image/cal1-0.png" id="zero" onclick="total=total*10+0; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-1.png" id="one" onclick="total=total*10+1; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-2.png" id="two" onclick="total=total*10+2; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-3.png" id="three" onclick="total=total*10+3; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-4.png" id="four" onclick="total=total*10+4; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-5.png" id="five" onclick="total=total*10+5; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-6.png" id="six" onclick="total=total*10+6; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-7.png" id="seven" onclick="total=total*10+7; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-8.png" id="eight" onclick="total=total*10+8; document.getElementById('nftext').innerHTML=total;">
+<IMG src="image/cal1-9.png" id="nine" onclick="total=total*10+9; document.getElementById('nftext').innerHTML=total;">
+
+<BUTTON id="button1"
+onclick="
+
+document.body.className='skin1';
+document.getElementById('background').src='image/cal1.png';
+document.getElementById('ac').src='image/cal1ac.png';
+document.getElementById('mi').src='image/cal1mi.png';
+document.getElementById('per').src='image/cal1per.png';
+document.getElementById('di').src='image/cal1di.png';
+document.getElementById('mul').src='image/cal1mul.png';
+document.getElementById('sqrt').src='image/cal1sqrt.png';
+document.getElementById('pl').src='image/cal1pl.png';
+document.getElementById('min').src='image/cal1min.png';
+document.getElementById('eq').src='image/cal1eq.png';
+document.getElementById('zero').src='image/cal1-0.png';
+document.getElementById('one').src='image/cal1-1.png';
+document.getElementById('two').src='image/cal1-2.png';
+document.getElementById('three').src='image/cal1-3.png';
+document.getElementById('four').src='image/cal1-4.png';
+document.getElementById('five').src='image/cal1-5.png';
+document.getElementById('six').src='image/cal1-6.png';
+document.getElementById('seven').src='image/cal1-7.png';
+document.getElementById('eight').src='image/cal1-8.png';
+document.getElementById('nine').src='image/cal1-9.png';
+">
+SKIN 1
+</BUTTON>
+
+
+<BUTTON id="button2"
+onclick="
+document.body.className='skin2';
+document.getElementById('background').src='image/cal2.png';
+document.getElementById('ac').src='image/cal2ac.png';
+document.getElementById('mi').src='image/cal2mi.png';
+document.getElementById('per').src='image/cal2per.png';
+document.getElementById('di').src='image/cal2di.png';
+document.getElementById('min').src='image/cal2min.png';
+document.getElementById('mul').src='image/cal2mul.png';
+document.getElementById('sqrt').src='image/cal2sqrt.png';
+document.getElementById('eq').src='image/cal2eq.png';
+document.getElementById('zero').src='image/cal2-0.png';
+document.getElementById('one').src='image/cal2-1.png';
+document.getElementById('two').src='image/cal2-2.png';
+document.getElementById('three').src='image/cal2-3.png';
+document.getElementById('four').src='image/cal2-4.png';
+document.getElementById('five').src='image/cal2-5.png';
+document.getElementById('six').src='image/cal2-6.png';
+document.getElementById('seven').src='image/cal2-7.png';
+document.getElementById('eight').src='image/cal2-8.png';
+document.getElementById('nine').src='image/cal2-9.png';
+document.getElementById('pl').src='image/cal2pl.png';
+
+
+">
+SKIN 2
+</BUTTON>
+
+
+<BUTTON id="button3"
+onclick="
+document.body.className='skin3';
+document.getElementById('background').src='image/cal3.png';
+document.getElementById('ac').src='image/cal3ac.png';
+document.getElementById('mi').src='image/cal3mi.png';
+document.getElementById('mul').src='image/cal3mul.png';
+document.getElementById('per').src='image/cal3per.png';
+document.getElementById('di').src='image/cal3di.png';
+document.getElementById('sqrt').src='image/cal3sqrt.png';
+document.getElementById('eq').src='image/cal3eq.png';
+document.getElementById('min').src='image/cal3min.png';
+document.getElementById('zero').src='image/cal3-0.png';
+document.getElementById('one').src='image/cal3-1.png';
+document.getElementById('two').src='image/cal3-2.png';
+document.getElementById('three').src='image/cal3-3.png';
+document.getElementById('four').src='image/cal3-4.png';
+document.getElementById('five').src='image/cal3-5.png';
+document.getElementById('six').src='image/cal3-6.png';
+document.getElementById('seven').src='image/cal3-7.png';
+document.getElementById('eight').src='image/cal3-8.png';
+document.getElementById('nine').src='image/cal3-9.png';
+document.getElementById('pl').src='image/cal3pl.png';
+
+">
+SKIN 3
+</BUTTON>
+
+
+<BUTTON id="button4"
+onclick="
+document.body.className='skin4';
+document.getElementById('background').src='image/cal4.png';
+document.getElementById('ac').src='image/cal4ac.png';
+document.getElementById('mi').src='image/cal4mi.png';
+document.getElementById('per').src='image/cal4per.png';
+document.getElementById('di').src='image/cal4di.png';
+document.getElementById('mul').src='image/cal4mul.png';
+document.getElementById('zero').src='image/cal4-0.png';
+document.getElementById('one').src='image/cal4-1.png';
+document.getElementById('two').src='image/cal4-2.png';
+document.getElementById('three').src='image/cal4-3.png';
+document.getElementById('four').src='image/cal4-4.png';
+document.getElementById('five').src='image/cal4-5.png';
+document.getElementById('six').src='image/cal4-6.png';
+document.getElementById('seven').src='image/cal4-7.png';
+document.getElementById('eight').src='image/cal4-8.png';
+document.getElementById('nine').src='image/cal4-9.png';
+document.getElementById('min').src='image/cal4min.png';
+document.getElementById('pl').src='image/cal4pl.png';
+document.getElementById('sqrt').src='image/cal4sqrt.png';
+document.getElementById('eq').src='image/cal4eq.png';
+">
+SKIN 4
+</BUTTON>
+
+
+<DIV id="numberfield">
+    <DIV id="nftext">0</DIV>
+</DIV>
+
+</BODY>
+</HTML>
+
